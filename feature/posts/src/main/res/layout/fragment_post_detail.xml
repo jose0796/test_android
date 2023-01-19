@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_view"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="JLkalsjdkalds" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="24dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            tools:text="JLkalsjdkalds" />
+
+        <TextView
+            android:id="@+id/author_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textSize="18sp"
+            android:text="Author"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/description"
+            app:layout_constraintTop_toBottomOf="@+id/description" />
+
+        <TextView
+            android:id="@+id/author_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toStartOf="@+id/author_label"
+            app:layout_constraintTop_toBottomOf="@+id/author_label"
+            tools:text="James Rodriguez" />
+
+        <TextView
+            android:id="@+id/author_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/author_name"
+            app:layout_constraintTop_toBottomOf="@+id/author_name"
+            tools:text="jrodriguez@gmail.com" />
+
+        <TextView
+            android:id="@+id/author_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/author_email"
+            app:layout_constraintTop_toBottomOf="@+id/author_email"
+            tools:text="\@bret" />
+
+        <TextView
+            android:id="@+id/author_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/author_username"
+            app:layout_constraintTop_toBottomOf="@+id/author_username"
+            tools:text="Kulas Light, Apt. 556" />
+
+        <TextView
+            android:id="@+id/author_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/author_address"
+            app:layout_constraintTop_toBottomOf="@+id/author_address"
+            tools:text="1-770-736-8031 x56442" />
+
+        <TextView
+            android:id="@+id/author_website"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/author_phone"
+            app:layout_constraintTop_toBottomOf="@+id/author_phone"
+            tools:text="hildegard.org" />
+
+        <TextView
+            android:id="@+id/comments_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_goneMarginTop="8dp"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/author_website"
+            app:layout_constraintTop_toBottomOf="@+id/author_website"
+            android:text="@string/comments" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/comments_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="8dp"
+            tools:listitem="@layout/comments_layout_item"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_marginHorizontal="24dp"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/comments_label" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/error"
+        android:visibility="gone"
+        layout="@layout/error_layout"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
